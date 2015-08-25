@@ -26,6 +26,7 @@ McCourt School of Public Policy, Georgetown University
   - Type `sysuse auto` in the command panel. `sysuse` can use shipped (included) datasets.
   - Or, using drop-down menus: `File > example data sets > auto.dta`
 
+
 ### Open browse window 
   * using command line: `browse`
   * using icon (looks like a mini-spreadsheet grid with a little magnifying glass, grid with pencil icon will open the browser in edit mode to change, add, or delete data) or using drop-down menus:
