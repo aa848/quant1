@@ -193,7 +193,7 @@ Type `summarize price weight if mpg > 20 & foreign == 1` and hit enter.
 Type `summarize price weight if mpg > 20 | foreign == 1` and hit enter.
 
 ##  In-Class Activity 1
-1) To load the `auto.dta' from stata's memory, use the `sysuse' command (i.e. type `sysuse auto'
+1) To load the `auto.dta' from stata's memory, use the `sysuse' command (i.e. type `sysuse auto')
 2) Note that stata is case sensitive in commands.  Try `SYSUSE auto' and not results
 3) To view labels, variable type, etc for each variable in memory use the `describe'
 4) Stata syntax typically follows the `command variable(s)' structure.  To describe one variable try `describe weight'.  Note multiple variables can be enterred at once (try `describe mpg make')
