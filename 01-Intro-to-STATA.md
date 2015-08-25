@@ -194,7 +194,7 @@ Type `summarize price weight if mpg > 20 | foreign == 1` and hit enter.
 
 ##  In-Class Activity 1 - introduction to stata commands and syntax
 1. To load the `auto.dta` from stata's memory, use the `sysuse` command (i.e. type `sysuse auto`)
-2. Note that stata is case sensitive in commands.  Try `SYSUSE auto` and not results
+2. Note that stata is case sensitive in commands.  Try `SYSUSE auto` and note results
 3. To view all data in memory type `browse`
 4. To view all data in the stata window, type `list`
 5. `sort` arranges the data in ascending order by the specified variable(s).  Type `sort price` and then `list`.  Note the differences from before.
