@@ -206,9 +206,6 @@ Questions using the auto.dta example dataset:
  5. List the make and price of the most expensive car
 
 
-
-```
-
 ## After-Class Exercises using the `lifeexp.dta` example dataset:
 
 Create a do-file to open the lifeexp.dta example data set 
