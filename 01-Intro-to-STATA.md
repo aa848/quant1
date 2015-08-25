@@ -200,7 +200,7 @@ Type `summarize price weight if mpg > 20 | foreign == 1` and hit enter.
 5. Note that variables are also case sensitive.  Try `describe WEIGHT`)
 6. Stata will, however, accept truncated commands and variables which are not ambiguous.  Try `d we`
 7. Note an error will occur if multiple variables start with the same letter(s).  Try `d m`.  Always add enough of a variable (and command) name to uniquely specify.  Try `d mp`
-8. Also, stata will accept `*` as a wildcard character (i.e. m* will provide all results for variables starting with the letter `m`).  Try `d m*` `d t*` and `d f*`
+8. Also, stata will accept `*` as a wildcard character (i.e. `m*` will provide all results for variables starting with the letter `m`).  Try `d m*` `d t*` and `d f*`
 
 
 
