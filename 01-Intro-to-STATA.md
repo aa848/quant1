@@ -206,25 +206,7 @@ Questions using the auto.dta example dataset:
  5. List the make and price of the most expensive car
 
 
-### Result should be something like this:
-```
-sysuse auto.dta
 
-* 1. describe all variables 
-describe
-
-* 2. summarize price mpg weight and length 
-summarize price mpg weight length
-
-* 3. What is the difference between the highest and lowest mpg?
-display 41-12
-* Difference between highest and lowest mpg is 29.
-
-* 4. Summarize price, mpg, weight, and length for cars costing less than $4,000
-summarize price mpg weight length if price < 4000
-
-* 5. List the make and price of the most expensive car
-list make price if price == 15906
 ```
 
 ## After-Class Exercises using the `lifeexp.dta` example dataset:
