@@ -192,15 +192,23 @@ Type `summarize price weight if mpg > 20 & foreign == 1` and hit enter.
 
 Type `summarize price weight if mpg > 20 | foreign == 1` and hit enter.
 
-##  In-Class Activity 1
+##  In-Class Activity 1 - introduction to stata commands and syntax
 1. To load the `auto.dta` from stata's memory, use the `sysuse` command (i.e. type `sysuse auto`)
 2. Note that stata is case sensitive in commands.  Try `SYSUSE auto` and not results
-3. To view labels, variable type, etc for each variable in memory use the `describe`
-4. Stata syntax typically follows the `command variable(s)` structure.  To describe one variable try `describe weight`.  Note multiple variables can be enterred at once (try `describe mpg make`)
-5. Note that variables are also case sensitive.  Try `describe WEIGHT`)
-6. Stata will, however, accept truncated commands and variables which are not ambiguous.  Try `d we`
-7. Note an error will occur if multiple variables start with the same letter(s).  Try `d m`.  Always add enough of a variable (and command) name to uniquely specify.  Try `d mp`
-8. Also, stata will accept `*` as a wildcard character (i.e. `m*` will provide all results for variables starting with the letter `m`).  Try `d m*` `d t*` and `d f*`
+3. To view all data in memory type `browse`
+4. To view all data in the stata window, type `list`
+5. `sort` arranges the data in ascending order by the specified variable(s).  Type `sort price` and then `list`.  Note the differences from before.
+6. To view total observation count type `count`
+6. To view labels, variable type, etc for each variable in memory use the `describe`
+7. Stata syntax typically follows the `command variable(s)` structure.  To describe one variable try `describe weight`.  Note multiple variables can be enterred at once (try `describe mpg make`)
+8. Note that variables are also case sensitive.  Try `describe WEIGHT`)
+9. Stata will, however, accept truncated commands and variables which are not ambiguous.  Try `d we`
+10. Note an error will occur if multiple variables start with the same letter(s).  Try `d m`.  Always add enough of a variable (and command) name to uniquely specify.  Try `d mp`
+11. Also, stata will accept `*` as a wildcard character (i.e. `m*` will provide all results for variables starting with the letter `m`).  Try `d m*` `d t*` and `d f*`
+12. `summarize` gives simple summary statistics.  Note the results of `summarize` and `summarize mpg make`.  Why does `summarize make` yield no results?
+13. We've seen that one way stata commands can by modified is to include only specific variables.  Note most commands will also provide many other options.  To view full information for the `summarize command` type `help summarize`.  Although stata help files can be overwhelming at first, at the top we see that `detail` and `separator` can be added to the `summarize command`.
+14. To use options, enter it after the initial command with a comma.  Try `summarize mpg, detail`.  Note some commands require additional syntax.  Try `sum, separator`.  Note in the help file that this is specified as `separator(#)`.  Instead try `sum, separator(2)` and `sum, separator(3)` 
+
 
 
 
