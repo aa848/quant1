@@ -230,36 +230,6 @@ Document questions and answers with comments.
 
 
 
-```
-clear
-sysuse nlsw88.dta
-* 1. Report appropriate summary statistics for the following variables: 
-age, race, grade, collgrad, union 
-
-summarize age grade collgrad union
-
-* We can't summarize race - mean and sd don't mean anything!
-
-tabulate race
-tabulate collgrad
-tabulate union
-
-* We can tabulate the categorical and binary variables.
-* 2. What is the most common industry for workers in this sample?
-
-tabulate industry
-*or
-codebook industry, tabulate(99)
-
-* Ans: Professional Services 
-
-* 3.What is the average hourly wage for that industry? 
-
-tabulate industry, nolabel
-summarize wage if industry==11
-
-* Ans: $7.87 per hour
-```
 
 ## In Class Activity 2
  Answer the questions below using the `census.dta` data sets.
@@ -279,45 +249,4 @@ summarize wage if industry==11
  7. Are there any string variables in this data set? 
  	If so, which variables? 
 
-
-#### In Class Activity 2 Answer
-```   
-clear
-sysuse census.dta
-```
-
-1. The `region` variable assigns US states to different regions of the country. How many different regions are used in this data?
-```
-tabulate region
-```
-Ans: 4 regions
-2. What are the names of the different regions?
-
-	Ans: NE, N Cntrl, South, West 
-3. Which region has the largest number of states?
-
-	Ans: South
-4. Write a command to tabulate the regions in descending order of number of states.
-```
-tabulate region, sort
-```
-5. List the states in the largest region.
-```
-tabulate region, nolabel
-codebook region
-list state if region==3
-```
-6. Which region has the highest average median age? What is the median age of that region?
-```
-sum medage if region==1
-sum medage if region==2
-sum medage if region==3
-sum medage if region==4
-```
-	Ans: NE , 31.2333 years
-7. Are there any string variables in this data set? If so, which variables? 
-```
-describe
-```
-	Ans: Yes, state and state2
 
