@@ -20,34 +20,6 @@ Use comments before and after the command to document the question you are answe
 4. How many cities are in the "West" Census region and the "Mountain" Census division?
 
 
-```
-sysuse citytemp.dta, clear
-
-
-*1
-gen hightempjan = 0
-replace hightempjan = 1 if tempjan > 40
-replace hightempjan = . if tempjan == .
-
-
-*2
-tab hightempjan
-* Ans: 353 cities
-
-
-*3
-graph bar (mean) heatdd (mean) cooldd, over(hightempjan)
-
-
-*4
-tab region
-tab region, nolabel
-tab division
-tab division, nolabel
-count  if region == 4 & division == 8
-*Ans: 61 cities in both the "West" Census region and the "Mountain" Census division
-```
-
 
 ## Discrete/Categorical variables : Two-way tabulation and Pearson's chi-2 test
 
@@ -178,33 +150,6 @@ Use comments before and after the command to document the question you are answe
 2. Test whether the mean for write is the same for males and females.
 3. Is there any relationship between the type of school attended and gender?
 
-
-```
-*1
-ttest write=50
-
-* ANS: The mean of the variable write for this particular sample of 
-* students is 52.775, which is statistically significantly different 
-* from the test value of 50.  
-* We would conclude that this group of students has a significantly 
-* higher mean on the writing test than 50.
-
-*2
-ttest write, by(female)
-
-* ANS: The results indicate that there is a statistically significant 
-* difference between the mean writing score for males and females 
-* (t = -3.7341, p = .0002).  
-* In other words, females have a statistically significantly higher 
-* mean score on writing (54.99) than males (50.12).
-
-*3
-tab2 schtyp female, chi2
-
-* ANS: These results indicate that there is no statistically significant 
-* relationship between the type of school attended and gender 
-* (chi-square with one degree of freedom = 0.0470, p = 0.828).  
-```
 
 
 ## Labels
