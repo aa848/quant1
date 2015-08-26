@@ -85,37 +85,6 @@ Write stata command and interpret the result in a do-file.
 6. Count the number of female students if their student id is odd. Replace the `read` to missing value if the respondent is female with an odd student id.
 7. What is the correlation between write and read now? Is it significant? Report the observation number in this case. Compare result with question 2 and 5.
 
-### Answers:
-
-```
-*1
-clear
-use http://www.ats.ucla.edu/stat/stata/notes/hsb2
-twoway (scatter write read) (lfit write read)
-
-*2
-pwcorr write read, obs sig
-
-*3
-gen id_odd=mod(id,2)
-
-*4
-count if id_odd ==1
-replace write=. if id_odd==1
-
-*5
-pwcorr write read, obs sig
-
-*6
-count if id_odd==1 & female==1
-replace read=. if id_odd==1 & female==1
-
-*7
-pwcorr write read, obs sig
-The correlation is significant in all instances.
-
-```
-
 
 ## Regression 
 We will cover how to run regressions and where to find output components.
@@ -232,15 +201,5 @@ Write stata command and interpret the result in a do-file.
 3. Regress the writing score on the other types of scores only for respondents went to public school.
 4. Try Regression with missing data
 
-### Answers
 
-```
-regress write gender
-regress write female schtyp prog id
-codebook schtyp, tab(999)
-reg write read math science socst if schtyp ==1
-//or, if you want information for both groups:
-bysort:reg write read math science socst 
-
-```
 
