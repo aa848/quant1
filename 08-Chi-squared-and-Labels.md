@@ -276,24 +276,6 @@ Use comments before and after the command to document the question you are answe
 2. Generate a new variable called `weekly_wage` and label it appropriately
 3. Generate a new indicator variable (numeric, value includes 1/2/3/etc.) called `employ_type` with the following categories: `full-time`,`part-time`,`others` based on your criteria.
 
-```
-*1
-sysuse nlsw88
-label data "NLS Mature and Young Women, 1988"
-
-*2
-gen weekly_wage=hours*wage
-label variable weekly_wage "Weekly wage"
-
-*3
-gen employ_type=.
-replace employ_type=1 if hours>=40 & hours!=.
-replace employ_type=2 if hours>=20 & hours<40
-replace employ_type=3 if hours<20
-label define employ_label 1 "Full time" 2 "Part time" 3 "Other"
-label values employ_type employ_label
-```
-
 
 #### `Encode/decode`
 - Changing between strings and labels 
