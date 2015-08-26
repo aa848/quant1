@@ -135,27 +135,6 @@ PRACTICE using the `nlsw88.dta` example dataset
 3. Test the hypothesis that wages are equal for married and non-married respondents. Do not assume that the two groups have equal variances. 
 4. Test the hypothesis that wages are equal for union and non-union workers. Assume that the two groups have equal variances. 
 
-```
-* Load Data
-sysuse nlsw88.dta, clear
-
-
-*1
-ttest wage == 7.60
-* Ans: p-value for two sided test is 0.1694
-
-*2
-ci hours , level(90)
-* Ans: 90% confidence interval for the average value of hours is :  36.85289 to 37.58333
-
-*3
-ttest wage , by(married) unequal 
-* Ans: P-value for the two-sided test is 0.0652
-
-*4
-ttest wage , by(union)
-*Ans: P-value for the two-sided test less than 0.001
-```
 
 
 ## Strings 
@@ -239,40 +218,6 @@ PRACTICE using the `auto.dta` example dataset
 3. Create a new string variable Excellent_Cars that adds the word EXCELLENT to the end of cars you think are 
    excellent.
 
-```
-* Load Data
-sysuse auto.dta, clear
-*1
-*Lincoln Continental
-//here's how i do the longest car
-*sort method - will only return one value, so not ideal here
-sort length
-list make in -1
-
-*sum method - will return all values matching the largest value
-sum length
-*remember summarize loads the r(). see the bottom of the summarize help file
-list make if length == r(max)
-// and here are the cars with the longest name
- Chev. Monte Carlo and  Linc. Continental 
-gen lengthName = length(make)
-sum lengthName
-list make if length(make) ==17
-*note that I don't have to worry about hidden decimal places as the length() funciton returns integers
-
-*2
-*so I want the number of Chevrolet cars (Chev)
-count if regexm(make, "^Chev")
-*and how many domestic cars are there?
-count if foreign == 0
-display 6/52
-
-*3
-*lets call cars with really good fuel mileage excellent
-gen Excellent_Cars = ""
-sum mpg, detail
-replace Excellent_Cars= make + " EXCELLENT" if mpg > r(p95)
-```
 
 
 ### Converting between strings and numbers
