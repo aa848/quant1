@@ -161,17 +161,7 @@ count if rep78=.
 
 ![Stata Version](figures/3-version.png)
 
-### Challenge Questions (Optional)
-* When invalid commands are put into Stata, it generates an error
-* The error message gives you an idea of what went wrong
-* Generate the following errors
-```
-varlist required
-variable _____ not found
-option by not allowed
-invalid syntax
-type mismatch
-```
+
 
 ### In Class Activity 1
 Using the auto.dta data set, attempt to answer the questions below with `tabstat` command
@@ -194,4 +184,16 @@ Foreign         price |   6,384.7   2,621.9     3,748    12,990     9,242
                   mpg |   24.7727   6.61119        14        41        27
                 rep78 |   4.28571   .717137         3         5         2
 -------------------------------------------------------------------------
+```
+
+### Challenge Questions (Optional)
+* When invalid commands are put into Stata, it generates an error
+* The error message gives you an idea of what went wrong
+* Generate the following errors
+```
+varlist required
+variable _____ not found
+option by not allowed
+invalid syntax
+type mismatch
 ```
