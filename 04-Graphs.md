@@ -143,21 +143,6 @@ graph export ".../MyNewGraph", as(pdf) replace
 
 ![In Class Activity 1](figures/03-ica1.png)
 
-
-
-
-```
-sysuse auto.dta
-* 1. Create a scatterplot with mpg on the x axis and price on the y axis.
-twoway scatter price mpg
-* 2. Add a linear prediction fit line on the graph.
-twoway (scatter price mpg) (lfit price mpg)
-* 3. Title the y axis "Price in Dollars"
-twoway (scatter price mpg) (lfit price mpg), ytitle(Price in Dollars)
-* 4. Save graph as a new pdf file 
-graph export ".../MyNewGraph", as(pdf) replace
-```
-
 ## Other Types of Graphs
 
 help graph intro
@@ -235,13 +220,6 @@ histogram mpg, discrete
 1. Create a bar graph that shows the mean gear ratio for foreign and domestic cars.
 2. Change the color of the bars to your favorite color.
 3. Create a graph of your choice using the `auto.dta`.
-
-
-```
-sysuse auto
-graph bar gear_ratio, over(foreign)
-graph bar (mean) gear_ratio, over(foreign) bar(1, fcolor(black))
-```
 
 Or, 
 - right-click on graph and select `start graph editor`
